@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Bille {
 	private double radius;
-	private double mass;
+	private double mass;//test gihub
 	private Color color;
 	private Vecteur position;
 	private Vecteur speed;
@@ -52,7 +52,7 @@ public class Bille {
 		Vecteur radialUnitaire= radial.Multiply(1/radial.Module());
 		Vecteur orthoradial=radial.Normale(this.speed.Subtract(b.getSpeed()));
 		Vecteur orthoradialUnitaire=orthoradial.Multiply(1/orthoradial.Module());
-		this.speed=orthoradialUnitaire.Multiply((ini1.Subtract(b.getSpeed())).Multiply(pv1).Scalaire(orthoradialUnitaire)).Sum(b.getSpeed());//on attribut une nouvelle vitesse à la boule 1 (en prenant en compté les vitesses relatives et les vitesses initiales)
+		this.speed=orthoradialUnitaire.Multiply((ini1.Subtract(b.getSpeed())).Multiply(pv1).Scalaire(orthoradialUnitaire)).Sum(b.getSpeed());//on attribut une nouvelle vitesse Ã  la boule 1 (en prenant en comptÃ© les vitesses relatives et les vitesses initiales)
 		b.setSpeed(radialUnitaire.Multiply((ini1.Subtract(b.getSpeed())).Multiply((1-pv1)*this.mass/b.getMass()).Scalaire(radialUnitaire)).Sum(b.getSpeed()));// on attribut aussi une nouvelle vitesse pour la boule 2
 	}
 	public boolean tombeTrou(Trou trou) {
